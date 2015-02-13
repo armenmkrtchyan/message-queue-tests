@@ -1,14 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:useBean id="portfolioBean" class="com.synisys.test.messaging.web.bean.PortfolioBean" scope="session"/>
 <c:set var="project" value="${portfolioBean.findProject(param.id)}"/>
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="exampleModalLabel">New message</h4>
-        </div>
-        <div class="modal-body">
+
             <div class="form-group">
                 <label for="descriptionId">Title</label>
                 <input type="text" class="form-control" id="titleId" placeholder="Enter Title" value="${project.title}">
@@ -52,10 +45,3 @@
                     </span>
                 </div>
             </div>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default">Submit</button>
-        </div>
-    </div>
-</div>

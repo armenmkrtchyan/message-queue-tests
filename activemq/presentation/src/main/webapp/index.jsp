@@ -65,8 +65,8 @@
             <jsp:include page="templates/portfolioTable.jsp?page=1"/>
         </div>
         <div class="col-lg-12">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                    data-id="true">Create Project
+            <button type="button" class="btn btn-primary data-input-button"
+                    data-id="1000">Create Project
             </button>
         </div>
     </div>
@@ -78,8 +78,22 @@
 </div>
 <!-- /.container -->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+            </div>
+            <div class="modal-body" id="inputBody">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- jQuery Version 1.11.1 -->
 <script src="js/jquery.js"></script>
@@ -102,11 +116,13 @@
         }).on('page', function (event, num) {
             $("#tableContent").load("templates/portfolioTable.jsp?page=" + num);
         });
-        $('#exampleModal').on('show.bs.modal', function (event) {
+
+        $('.data-input-button').on('click', function(event){
             var button = $(event.relatedTarget); // Button that triggered the modal
             var id = button.data('id');
-            $(this).load('templates/input.jsp?id=' + id);
-        })
+            $('#inputBody').load('templates/input.jsp?id=' + id);
+            $('#inputModal').modal('show');
+        });
     })
 </script>
 </body>
