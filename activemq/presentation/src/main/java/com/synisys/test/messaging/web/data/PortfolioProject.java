@@ -7,14 +7,20 @@ import java.math.BigDecimal;
  */
 public class PortfolioProject {
 
+    private final Long projectId;
     private final String title;
     private final String description;
     private final BigDecimal totalCost;
 
-    public PortfolioProject(String title, String description, BigDecimal totalCost) {
+    public PortfolioProject(Long projectId, String title, String description, BigDecimal totalCost) {
+        this.projectId = projectId;
         this.title = title;
         this.description = description;
         this.totalCost = totalCost;
+    }
+
+    public Long getProjectId() {
+        return projectId;
     }
 
     public String getTitle() {

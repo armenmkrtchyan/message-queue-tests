@@ -8,9 +8,27 @@ import java.util.List;
  */
 public class Project {
 
+    private Long projectId;
     private String title;
     private String description;
     private final List<ProjectCost> projectCosts = new ArrayList<>();
+
+    public Project() {
+    }
+
+    public Project(Long projectId, String title, String description) {
+        this.projectId = projectId;
+        this.title = title;
+        this.description = description;
+    }
+
+    public Long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
 
     public String getTitle() {
         return title;

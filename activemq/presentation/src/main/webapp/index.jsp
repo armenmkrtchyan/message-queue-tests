@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:useBean id="portfolioBean" class="com.synisys.test.messaging.web.bean.PortfolioBean" scope="session"/>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +16,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <%-- Jasny Bootstrap CSS --%>
+    <link href="css/jasny-bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
@@ -56,70 +61,54 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-lg-12 text-center table-responsive">
-            <table class="table table-hover table-bordered">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th class="text-center">Title</th>
-                    <th class="text-center">Total Amount</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row" class="col-md-1">1</th>
-                    <td class="col-md-9">First</td>
-                    <td class="col-md-3">101</td>
-                </tr>
-                <tr>
-                    <th scope="row" class="col-md-1">2</th>
-                    <td class="col-md-9">Second</td>
-                    <td class="col-md-3">102</td>
-                </tr>
-                <tr>
-                    <th scope="row" class="col-md-1">3</th>
-                    <td class="col-md-9">Third</td>
-                    <td class="col-md-3">103</td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="col-lg-12 text-center table-responsive" id="tableContent">
+            <jsp:include page="templates/portfolioTable.jsp?page=1"/>
+        </div>
+        <div class="col-lg-12">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-id="true">Create Project
+            </button>
         </div>
     </div>
     <!-- /.row -->
     <div class="row">
-        <div class="col-lg-12 text-center">
-            <nav>
-                <ul class="pagination">
-                    <li class="disabled">
-                      <span>
-                        <span aria-hidden="true">&laquo;</span>
-                      </span>
-                    </li>
-                    <li class="active">
-                        <span>1 <span class="sr-only">(current)</span></span>
-                    </li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <div class="col-lg-12 text-center" id="pagination">
         </div>
     </div>
 </div>
 <!-- /.container -->
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+</div>
 <!-- jQuery Version 1.11.1 -->
 <script src="js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+<%-- jasny Bootstrap Javascript --%>
+<script src="js/jquery.bootpag.min.js"></script>
+
+<!-- Bootpag - bootstrap jquery pagination plugin-->
+<script src="js/jquery.bootpag.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#pagination').bootpag({
+            total: <c:out value="${portfolioBean.pageCount}"/>,
+            page: 1,
+            maxVisible: 5
+        }).on('page', function (event, num) {
+            $("#tableContent").load("templates/portfolioTable.jsp?page=" + num);
+        });
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var id = button.data('id');
+            $(this).load('templates/input.jsp?id=' + id);
+        })
+    })
+</script>
 </body>
 
 </html>
