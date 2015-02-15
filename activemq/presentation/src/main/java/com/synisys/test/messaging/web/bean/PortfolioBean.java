@@ -5,6 +5,7 @@ import com.synisys.test.messaging.web.data.Project;
 import com.synisys.test.messaging.web.data.ProjectCost;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,15 +15,15 @@ import java.util.List;
 public class PortfolioBean {
 
     private static final PortfolioProject[] PORTFOLIO_PROJECTS = new PortfolioProject[100];
-    private static final Project[] PROJECTS = new Project[100];
+    private static final ArrayList<Project> PROJECTS = new ArrayList<>(200);
     private static final int PAGE_SIZE = 10;
 
     static {
         for (int i = 0; i < 100; i++) {
             PORTFOLIO_PROJECTS[i] = new PortfolioProject((long) i, "Project Title" + i, "Project Description " + i, BigDecimal.TEN.add(BigDecimal.valueOf(i)));
-            PROJECTS[i] = new Project((long) i, "Project Title" + i, "Project Description " + i);
+            PROJECTS.add(new Project((long) i, "Project Title" + i, "Project Description " + i));
             for (int j = 0; j < 3; j++) {
-                PROJECTS[i].getProjectCosts().add(new ProjectCost(BigDecimal.valueOf(i).multiply(BigDecimal.valueOf(1000)).add(BigDecimal.valueOf(j))));
+                PROJECTS.get(i).getProjectCosts().add(new ProjectCost(BigDecimal.valueOf(i).multiply(BigDecimal.valueOf(1000)).add(BigDecimal.valueOf(j))));
             }
         }
     }
@@ -35,6 +36,10 @@ public class PortfolioBean {
             }
         }
         return new Project();
+    }
+
+    public void addProject(Project project) {
+        PROJECTS.add(project);
     }
 
     public Integer getPageCount() {

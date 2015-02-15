@@ -33,6 +33,10 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+    <%-- Project Scripts --%>
+    <script src="js/main.js"></script>
 
 </head>
 
@@ -90,22 +94,19 @@
             <div class="modal-body" id="inputBody">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default">Submit</button>
+                <button type="button" class="btn btn-default project-submit-button">Submit</button>
             </div>
         </div>
     </div>
 </div>
-<!-- jQuery Version 1.11.1 -->
-<script src="js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<%-- jasny Bootstrap Javascript --%>
-<script src="js/jquery.bootpag.min.js"></script>
 
 <!-- Bootpag - bootstrap jquery pagination plugin-->
 <script src="js/jquery.bootpag.min.js"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -117,12 +118,15 @@
             $("#tableContent").load("templates/portfolioTable.jsp?page=" + num);
         });
 
-        $('.data-input-button').on('click', function(event){
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var id = button.data('id');
-            $('#inputBody').load('templates/input.jsp?id=' + id);
-            $('#inputModal').modal('show');
+        $('.data-input-button').on('click', function (event) {
+            $('#inputBody').load('templates/input.jsp?id=' + $(this).data('id'), function () {
+                $('#inputModal').modal('show');
+            });
         });
+
+        $('.project-submit-button').on('click', function (event) {
+            submitProject()
+        })
     })
 </script>
 </body>

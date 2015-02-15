@@ -11,7 +11,7 @@
     </thead>
     <tbody>
     <c:forEach items="${portfolioBean.getProjectsForPage(param.page)}" var="portfolioProject">
-        <tr>
+        <tr data-id="${portfolioProject.projectId}" style="cursor: pointer" class="data-input-row">
             <th scope="row" class="col-md-1">1</th>
             <td class="col-md-9"><c:out value="${portfolioProject.title}"/></td>
             <td class="col-md-3"><c:out value="${portfolioProject.totalCost}"/></td>
@@ -19,3 +19,14 @@
     </c:forEach>
     </tbody>
 </table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.data-input-row').on('click', function (event) {
+            $('#inputBody').load('templates/input.jsp?id=' + $(this).data('id'), function () {
+                $('#inputModal').modal('show');
+            });
+        });
+
+    });
+
+</script>
