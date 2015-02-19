@@ -15,5 +15,18 @@
     <modules>
         <module>domain</module>
         <module>presentation</module>
+        <module>persistance</module>
     </modules>
+    <properties>
+        <spring.version>4.1.1.RELEASE</spring.version>
+        <apache.camel.version>2.14.1</apache.camel.version>
+        <activeMQ.version>5.11.0</activeMQ.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-client</artifactId>
+            <version>5.11.0</version>
+        </dependency>
+    </dependencies>
 </project>

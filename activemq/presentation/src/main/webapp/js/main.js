@@ -30,11 +30,7 @@ function submitProject(projectId, projectTitle, projectDescription) {
         type: 'POST',
         data: {projectId : projectId, projectTitle : projectTitle, projectDescription : projectDescription},
         success: function(result) {
-            var lasttr = $('#projectCostsId').find('tr:last');
-            var tr = rowTemplate.clone();
-            tr.find('.cost-remove-button').data('projectid', projectId);
-            tr.find('.cost-value-holder').html(cost);
-            lasttr.after(tr);
+            $('#inputModal').modal('hide');
         }
     });
 }

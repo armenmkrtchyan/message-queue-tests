@@ -1,0 +1,272 @@
+02-18 00:05:05 database: close
+org.h2.message.DbException: IO Exception: "java.io.EOFException"; "/home/armen/IdeaProjects/message-queue-tests/activemq/persistance/src/main/resources.h2.db" [90031-175]
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.message.DbException.convertIOException(DbException.java:318)
+	at org.h2.store.FileStore.readFully(FileStore.java:268)
+	at org.h2.store.PageStore.readPage(PageStore.java:1291)
+	at org.h2.store.PageStore.getPage(PageStore.java:738)
+	at org.h2.store.PageStreamTrunk$Iterator.next(PageStreamTrunk.java:250)
+	at org.h2.store.PageLog.free(PageLog.java:209)
+	at org.h2.store.PageStore.compact(PageStore.java:491)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1257)
+	at org.h2.engine.Database.close(Database.java:1207)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:64)
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "/home/armen/IdeaProjects/message-queue-tests/activemq/persistance/src/main/resources.h2.db" [90031-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	... 11 more
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:343)
+	at org.h2.store.FileStore.readFully(FileStore.java:266)
+	... 8 more
+02-19 01:28:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:29:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:29:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:30:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:31:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:31:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:32:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:33:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:34:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:35:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:36:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:37:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:37:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:38:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:39:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:40:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:40:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:40:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:42:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:43:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:44:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:45:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:46:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:47:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:48:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:49:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:50:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:51:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:52:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:52:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:53:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:53:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-19 01:54:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-20 03:21:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT" not found; SQL statement:
+SELECT COUNT(*) FROM Project [42102-185]
+02-20 03:22:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:22:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:22:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:23:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:23:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:23:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:23:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:24:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:24:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:24:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:25:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:25:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:26:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:26:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:26:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:27:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(PROJECTCOSTVALUE) FROM PROJECTCOST GROUP BY PROJECTID WHERE[*] PROJECTID = ? "; SQL statement:
+SELECT SUM(ProjectCostValue) FROM ProjectCost GROUP BY ProjectID WHERE ProjectID = ? [42000-185]
+02-20 03:28:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ProjectCostValue" not found [42122-185]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getBigDecimal(JdbcResultSet.java:428)
+	at com.synisys.test.messaging.dao.ProjectCostDao.loadProjectTotalCost(ProjectCostDao.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.camel.component.bean.BeanInvocation.invoke(BeanInvocation.java:83)
+	at org.apache.camel.component.bean.BeanProcessor.process(BeanProcessor.java:130)
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:416)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)
+	at org.apache.camel.component.jms.EndpointMessageListener.onMessage(EndpointMessageListener.java:103)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:685)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:623)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:591)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:308)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:246)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+02-20 03:29:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ProjectCostValue" not found [42122-185]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getBigDecimal(JdbcResultSet.java:428)
+	at com.synisys.test.messaging.dao.ProjectCostDao.loadProjectTotalCost(ProjectCostDao.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.camel.component.bean.BeanInvocation.invoke(BeanInvocation.java:83)
+	at org.apache.camel.component.bean.BeanProcessor.process(BeanProcessor.java:130)
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:416)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)
+	at org.apache.camel.component.jms.EndpointMessageListener.onMessage(EndpointMessageListener.java:103)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:685)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:623)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:591)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:308)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:246)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+02-20 03:29:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ProjectCostValue" not found [42122-185]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getBigDecimal(JdbcResultSet.java:428)
+	at com.synisys.test.messaging.dao.ProjectCostDao.loadProjectTotalCost(ProjectCostDao.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.camel.component.bean.BeanInvocation.invoke(BeanInvocation.java:83)
+	at org.apache.camel.component.bean.BeanProcessor.process(BeanProcessor.java:130)
+	at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:72)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:416)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:191)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:105)
+	at org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:87)
+	at org.apache.camel.component.jms.EndpointMessageListener.onMessage(EndpointMessageListener.java:103)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:685)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:623)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:591)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:308)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:246)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)

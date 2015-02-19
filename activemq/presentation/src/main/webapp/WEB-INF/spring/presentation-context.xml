@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <bean id="projectService" class="com.synisys.test.messaging.service.ProjectService">
+        <constructor-arg index="0" ref="projectDao"/>
+        <constructor-arg index="1" ref="projectCostDao"/>
+    </bean>
+
+    <bean id="jms" class="org.apache.activemq.camel.component.ActiveMQComponent">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+    </bean>
+
+    <bean id="conditionProcess" class="com.synisys.test.messaging.web.MethodNameProcessor"/>
+
+    <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
+        <camel:proxy id="projectDao" serviceUrl="direct:project"
+                     serviceInterface="com.synisys.test.messaging.dao.ProjectDao"/>
+        <camel:proxy id="projectCostDao" serviceUrl="direct:projectCost"
+                     serviceInterface="com.synisys.test.messaging.dao.ProjectCostDao"/>
+        <camel:route id="project">
+            <camel:from uri="direct:project"/>
+            <camel:process ref="conditionProcess"/>
+            <camel:filter>
+                <camel:simple>${in.header.method} == 'getProjectsCount'</camel:simple>
+                <camel:to uri="jms:queue:project.count.queue" pattern="OutOnly"/>
+            </camel:filter>
+            <camel:filter>
+                <camel:simple>${in.header.method} == 'loadPortfolioProjectsInRange'</camel:simple>
+                <camel:to uri="jms:queue:portfolio.queue"/>
+            </camel:filter>
+            <camel:filter>
+                <camel:simple>${in.header.method} == 'loadProject'</camel:simple>
+                <camel:to uri="jms:queue:project.data.queue"/>
+            </camel:filter>
+            <camel:filter>
+                <camel:simple>${in.header.method} == 'updateProject'</camel:simple>
+                <camel:to uri="jms:queue:project.update.queue" pattern="InOnly"/>
+            </camel:filter>
+        </camel:route>
+        <camel:route id="projectCost">
+            <camel:from uri="direct:projectCost"/>
+            <camel:process ref="conditionProcess"/>
+            <camel:filter>
+                <camel:simple>${in.header.method} == 'insert'</camel:simple>
+                <camel:to uri="jms:queue:projectCost.insert.queue" pattern="InOnly"/>
+            </camel:filter>
+            <camel:filter>
+                <camel:simple>${in.header.method} == 'loadCostsByProjectId'</camel:simple>
+                <camel:to uri="jms:queue:projectCost.data.queue"/>
+            </camel:filter>
+            <camel:filter>
+                <camel:simple>${in.header.method} == 'loadProjectTotalCost'</camel:simple>
+                <camel:to uri="jms:queue:projectCost.total.queue"/>
+            </camel:filter>
+        </camel:route>
+    </camel:camelContext>
+</beans>

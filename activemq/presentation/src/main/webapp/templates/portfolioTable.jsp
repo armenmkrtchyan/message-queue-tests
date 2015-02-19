@@ -12,9 +12,9 @@
     <tbody>
     <c:forEach items="${portfolioBean.getProjectsForPage(param.page)}" var="portfolioProject">
         <tr data-id="${portfolioProject.projectId}" style="cursor: pointer" class="data-input-row">
-            <th scope="row" class="col-md-1">1</th>
+            <th scope="row" class="col-md-1"><c:out value="${portfolioProject.projectId}"/></th>
             <td class="col-md-9"><c:out value="${portfolioProject.title}"/></td>
-            <td class="col-md-3"><c:out value="${portfolioProject.totalCost}"/></td>
+            <td class="col-md-3"><c:out value="${portfolioBean.getProjectTotalCost(portfolioProject.projectId)}"/></td>
         </tr>
     </c:forEach>
     </tbody>
@@ -22,7 +22,9 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('.data-input-row').on('click', function (event) {
-            $('#inputBody').load('templates/input.jsp?id=' + $(this).data('id'), function () {
+            var id = $(this).data('id');
+            $('#inputBody').load('templates/input.jsp?id=' + id, function () {
+                $('#submitButtonId').data('id', id);
                 $('#inputModal').modal('show');
             });
         });

@@ -27,10 +27,14 @@ public class ProjectServlet extends HttpServlet {
         String projectTitle = req.getParameter("projectTitle");
         String projectDescription = req.getParameter("projectDescription");
         PortfolioBean portfolioBean = (PortfolioBean) req.getSession().getAttribute("portfolioBean");
-        Project project = portfolioBean.findProject(projectId);
+        Project project = portfolioBean.getCurrentProject();
         if (project == null) {
             project = new Project(ATOMIC_LONG.incrementAndGet(), projectTitle, projectDescription);
             portfolioBean.addProject(project);
+        } else {
+            project.setDescription(projectDescription);
+            project.setTitle(projectTitle);
+            portfolioBean.updateProject(project);
         }
     }
 }

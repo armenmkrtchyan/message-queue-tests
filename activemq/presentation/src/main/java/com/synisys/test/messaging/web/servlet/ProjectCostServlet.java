@@ -25,7 +25,7 @@ public class ProjectCostServlet extends HttpServlet {
         Long projectId = Long.valueOf(req.getParameter("projectId"));
         Long costId = Long.valueOf(req.getParameter("projectCostId"));
         PortfolioBean portfolioBean = (PortfolioBean) req.getSession().getAttribute("portfolioBean");
-        Project project = portfolioBean.findProject(projectId);
+        Project project = portfolioBean.getCurrentProject();
         for (int i = 0; i < project.getProjectCosts().size(); i++) {
             if (project.getProjectCosts().get(i).getId().equals(costId)) {
                 project.getProjectCosts().remove(i);
@@ -40,7 +40,7 @@ public class ProjectCostServlet extends HttpServlet {
         Long projectId = Long.valueOf(req.getParameter("projectId"));
         BigDecimal value = new BigDecimal(req.getParameter("projectCost"));
         PortfolioBean portfolioBean = (PortfolioBean) req.getSession().getAttribute("portfolioBean");
-        Project project = portfolioBean.findProject(projectId);
+        Project project = portfolioBean.getCurrentProject();
         project.getProjectCosts().add(new ProjectCost(value));
     }
 

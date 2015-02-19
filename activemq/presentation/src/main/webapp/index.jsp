@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:useBean id="portfolioBean" class="com.synisys.test.messaging.web.bean.PortfolioBean" scope="session"/>
+<jsp:useBean id="portfolioBean" class="com.synisys.test.messaging.web.bean.PortfolioBean" scope="session">
+    <jsp:setProperty name="portfolioBean" property="context" value="${pageContext.servletContext}" />
+</jsp:useBean>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +72,7 @@
         </div>
         <div class="col-lg-12">
             <button type="button" class="btn btn-primary data-input-button"
-                    data-id="1000">Create Project
+                    data-id="-100000">Create Project
             </button>
         </div>
     </div>
@@ -94,7 +96,7 @@
             <div class="modal-body" id="inputBody">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default project-submit-button">Submit</button>
+                <button id="submitButtonId" type="button" class="btn btn-default project-submit-button">Submit</button>
             </div>
         </div>
     </div>
@@ -119,13 +121,16 @@
         });
 
         $('.data-input-button').on('click', function (event) {
-            $('#inputBody').load('templates/input.jsp?id=' + $(this).data('id'), function () {
-                $('#inputModal').modal('show');
+            var id = $(this).data('id');
+            $('#inputBody').load('templates/input.jsp?id=' + id, function () {
+                var modal = $('#inputModal');
+                $('#submitButtonId').data('id', id);
+                modal.modal('show');
             });
         });
 
         $('.project-submit-button').on('click', function (event) {
-            submitProject()
+            submitProject($('#submitButtonId').data('id') ,$('#titleId').val(), $('#descriptionId').val())
         })
     })
 </script>
